@@ -1,0 +1,13 @@
+.trend-up {
+	display: block;
+	margin: 0 auto;
+	padding-left: 22px;
+	background: url(../../../assets/trend_up.png) no-repeat 0 center;
+}
+
+.trend-down {
+	display: block;
+	margin: 0 auto;
+	padding-left: 22px;
+	background: url(../../../assets/trend_down.png) no-repeat 0 center;
+}

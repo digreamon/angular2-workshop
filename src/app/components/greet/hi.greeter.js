@@ -45,4 +45,5 @@ HiGreeter = __decorate([
     __metadata("design:paramtypes", [speech_service_1.SpeechService])
 ], HiGreeter);
 exports.HiGreeter = HiGreeter;
+
 //# sourceMappingURL=hi.greeter.js.map

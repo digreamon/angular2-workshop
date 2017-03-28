@@ -56,7 +56,7 @@ export class QuoteServiceImpl extends QuoteService {
 }
 
 @Injectable()
-export class QuoteServiceImplMock extends QuoteService {
+export class QuoteServiceImplMock implements QuoteService {
 
     loadQuotes(quotes: string): Observable<Quote[]> {
         return Observable.from([this.quotes]).map(quotes => {

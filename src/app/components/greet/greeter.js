@@ -16,4 +16,5 @@ var AbstractGreeter = (function () {
     return AbstractGreeter;
 }());
 exports.AbstractGreeter = AbstractGreeter;
+
 //# sourceMappingURL=greeter.js.map

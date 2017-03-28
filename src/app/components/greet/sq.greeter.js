@@ -49,4 +49,5 @@ SqGreeter = __decorate([
     __metadata("design:paramtypes", [speech_service_1.SpeechService])
 ], SqGreeter);
 exports.SqGreeter = SqGreeter;
+
 //# sourceMappingURL=sq.greeter.js.map

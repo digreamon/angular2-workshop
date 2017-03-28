@@ -81,11 +81,9 @@ QuoteServiceImpl = __decorate([
     __metadata("design:paramtypes", [http_1.Http])
 ], QuoteServiceImpl);
 exports.QuoteServiceImpl = QuoteServiceImpl;
-var QuoteServiceImplMock = (function (_super) {
-    __extends(QuoteServiceImplMock, _super);
+var QuoteServiceImplMock = (function () {
     function QuoteServiceImplMock() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.quotes = [
+        this.quotes = [
             {
                 symbol: "EURO",
                 name: "EUR/CHF",
@@ -99,7 +97,6 @@ var QuoteServiceImplMock = (function (_super) {
                 last: 10328.87
             }
         ];
-        return _this;
     }
     QuoteServiceImplMock.prototype.loadQuotes = function (quotes) {
         return Observable_1.Observable.from([this.quotes]).map(function (quotes) {
@@ -107,9 +104,10 @@ var QuoteServiceImplMock = (function (_super) {
         });
     };
     return QuoteServiceImplMock;
-}(QuoteService));
+}());
 QuoteServiceImplMock = __decorate([
     core_1.Injectable()
 ], QuoteServiceImplMock);
 exports.QuoteServiceImplMock = QuoteServiceImplMock;
+
 //# sourceMappingURL=quote.service.js.map

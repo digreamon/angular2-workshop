@@ -19,4 +19,5 @@ HeaderComponent = __decorate([
     })
 ], HeaderComponent);
 exports.HeaderComponent = HeaderComponent;
+
 //# sourceMappingURL=header.js.map

@@ -36,4 +36,5 @@ SpeechService = SpeechService_1 = __decorate([
 ], SpeechService);
 exports.SpeechService = SpeechService;
 var SpeechService_1;
+
 //# sourceMappingURL=speech.service.js.map

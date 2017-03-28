@@ -31,4 +31,5 @@ LogDirective = __decorate([
     })
 ], LogDirective);
 exports.LogDirective = LogDirective;
+
 //# sourceMappingURL=log.directive.js.map

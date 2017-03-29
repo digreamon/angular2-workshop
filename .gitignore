@@ -38,10 +38,9 @@ jspm_packages/
 
 # Typescript
 dist/
-#src/**/*.js
-#src/**/*.js.map
-#!src/systemjs.config.js
-!src/webpack.config.js
+src/**/*.js
+src/**/*.js.map
+!src/systemjs.config.js
 
 # Optional npm cache directory
 .npm

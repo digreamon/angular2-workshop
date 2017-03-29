@@ -21,7 +21,13 @@ export default class QuotesScreen implements OnDestroy {
         this.symbols = this.defaultSymbols;
         this.loadQuotes();
 
-        this.interval = setInterval(() => this.loadQuotes(), 10000);
+        // WARNING scope does not work here in the TS !!!!
+        let that = this;
+        this.interval = setInterval(function () {
+            that.loadQuotes();
+        }, 5000);
+        // instead use lambdas:
+        // this.interval = setInterval(() => that.loadQuotes(), 5000);
     }
 
     openDetails(symbol: string) {

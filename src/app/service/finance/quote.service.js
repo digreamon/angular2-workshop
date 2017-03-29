@@ -65,7 +65,7 @@ var QuoteServiceImpl = (function (_super) {
                 return quotes.map(function (quote) { return new Quote(quote.Symbol, quote.Name, quote.Open, quote.LastTradePriceOnly); });
             }
             else {
-                return Observable_1.Observable.of([new Quote(quotes.Symbol, quotes.Name, quotes.Open, quotes.LastTradePriceOnly)]);
+                return Observable_1.Observable.of(new Quote(quotes.Symbol, quotes.Name, quotes.Open, quotes.LastTradePriceOnly));
             }
         });
     };
@@ -99,9 +99,7 @@ var QuoteServiceImplMock = (function () {
         ];
     }
     QuoteServiceImplMock.prototype.loadQuotes = function (quotes) {
-        return Observable_1.Observable.from([this.quotes]).map(function (quotes) {
-            return quotes.map(function (quote) { return new Quote(quote.symbol, quote.name, quote.open, quote.last); });
-        });
+        return Observable_1.Observable.from(this.quotes).map(function (quote) { return new Quote(quote.symbol, quote.name, quote.open, quote.last); });
     };
     return QuoteServiceImplMock;
 }());

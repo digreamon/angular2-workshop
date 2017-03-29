@@ -18,14 +18,12 @@ export default class QuotesScreen implements OnDestroy {
     constructor(private router: Router,
                 private quoteService: QuoteService) {
 
-        var that = this;
-
         this.symbols = this.defaultSymbols;
         this.loadQuotes();
 
         // WARNING scope does not work here in the TS !!!!
-        this.interval = setInterval(function () {
-            that.loadQuotes();
+        this.interval = setInterval(() => {
+            this.loadQuotes();
         }, 10000);
     }
 
@@ -40,9 +38,10 @@ export default class QuotesScreen implements OnDestroy {
     }
 
     private loadQuotes() {
+        this.quotes = [];
         return this.quoteService.loadQuotes(this.symbols ? this.symbols : this.defaultSymbols).subscribe(
-            (quotes: any) => {
-                this.quotes = quotes;
+            (quote: Quote) => {
+                this.quotes.push(quote);
             },
             (error: any) => console.error(error));
     }

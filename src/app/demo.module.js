@@ -57,7 +57,7 @@ DemoModule = __decorate([
             // It's not Angular's fault. An interface is a TypeScript design-time artifact. JavaScript doesn't have interfaces.
             // The TypeScript interface disappears from the generated JavaScript.
             // There is no interface type information left for Angular to find at runtime.
-            { provide: quote_service_1.QuoteService, useClass: quote_service_1.QuoteServiceImpl }
+            { provide: quote_service_1.QuoteService, useClass: quote_service_1.QuoteServiceImplMock }
         ]
     })
 ], DemoModule);

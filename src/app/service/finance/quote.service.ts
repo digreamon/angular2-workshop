@@ -23,7 +23,7 @@ export class Quote {
 // There is no interface type information left for Angular to find at runtime.
 // export interface QuoteService {
 export abstract class QuoteService {
-    abstract loadQuotes(quotes: string): Observable<Quote[]>;
+    abstract loadQuotes(quotes: string): Observable<Quote>;
 }
 
 @Injectable()
@@ -33,7 +33,7 @@ export class QuoteServiceImpl extends QuoteService {
         super();
     }
 
-    loadQuotes(quotes: string): Observable<Quote[]> {
+    loadQuotes(quotes: string): Observable<Quote> {
         return this.http.get(this.getUrl(quotes))
         .map(response => {
             return response.json().query.results.quote;
@@ -43,7 +43,7 @@ export class QuoteServiceImpl extends QuoteService {
                 return quotes.map(
                     (quote: any) => new Quote(quote.Symbol, quote.Name, quote.Open, quote.LastTradePriceOnly));
             } else {
-                return Observable.of([new Quote(quotes.Symbol, quotes.Name, quotes.Open, quotes.LastTradePriceOnly)]);
+                return Observable.of(new Quote(quotes.Symbol, quotes.Name, quotes.Open, quotes.LastTradePriceOnly));
             }
         });
     }
@@ -58,11 +58,8 @@ export class QuoteServiceImpl extends QuoteService {
 @Injectable()
 export class QuoteServiceImplMock implements QuoteService {
 
-    loadQuotes(quotes: string): Observable<Quote[]> {
-        return Observable.from([this.quotes]).map(quotes => {
-            return quotes.map(
-                (quote: any) => new Quote(quote.symbol, quote.name, quote.open, quote.last));
-        });
+    loadQuotes(quotes: string): Observable<Quote> {
+        return Observable.from(this.quotes).map(quote => new Quote(quote.symbol, quote.name, quote.open, quote.last));
     }
 
     private quotes = [

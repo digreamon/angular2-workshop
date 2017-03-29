@@ -17,19 +17,25 @@ gulp.task("compile", function () {
   .pipe(gulp.dest("dist"));
 });
 
-gulp.task('pack', ["compile"], function () {
+gulp.task('webpack', ["compile"], function () {
   return gulp.src('dist/main.js')
   .pipe(webpack(require('./webpack.config.js')))
   .pipe(gulp.dest('dist/'));
 });
 
-gulp.task("watch", ["pack"], function () {
+gulp.task("watch", ["compile"], function () {
   gulp.watch(["src/**/*.ts"], ["compile"]).on("change", function (e) {
-    console.log("TypeScript file " + e.path + " has been changed. Compiling.");
+    console.log("TypeScript file " + e.path + " has been changed. Refreshing.");
   });
 });
 
-gulp.task("serve", ["pack"], function (cb) {
+gulp.task("watch-webpack", ["webpack"], function () {
+  gulp.watch(["src/**/*.ts", "webpack.config.js"], ["pack"]).on("change", function (e) {
+    console.log("TypeScript file " + e.path + " has been changed. Refreshing.");
+  });
+});
+
+gulp.task("serve", ["compile"], function (cb) {
   // no logs, silent execution
   exec("yarn run lite", function (err, stdout, stderr) {
     console.log(stdout);
@@ -53,6 +59,19 @@ gulp.task("serve", ["pack"], function (cb) {
   //     console.log("child process exited with code " + code.toString());
   //   });
   // }
+
+});
+
+gulp.task("serve-webpack", ["webpack"], function (cb) {
+  // no logs, silent execution
+  exec("yarn run lite", function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+});
+
+gulp.task("build-webpack", ["watch-webpack", "serve-webpack"], function () {
 
 });
 

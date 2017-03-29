@@ -32,7 +32,7 @@ var QuoteDetailsScreen = (function () {
 QuoteDetailsScreen = __decorate([
     core_1.Component({
         selector: "quote-details",
-        template: "\n        <h3>{{quote.name}}&nbsp;&nbsp;({{quote.symbol}})</h3>\n        <hr>\n        <h5><em>Open:</em>{{quote.open}}&nbsp;&nbsp;&nbsp;<em>Last:</em>{{quote.last}}</h5>\n        <div [class.trend-up]=\"quote.getChange()>0\" [class.trend-down]=\"quote.getChange()<0\">\n            {{quote | quoteChange}}\n        </div>\n    ",
+        template: "\n\t\t<h3>{{quote.name}}&nbsp;&nbsp;({{quote.symbol}})</h3>\n\t\t<hr>\n\t\t<h5><em>Open:</em>{{quote.open}}&nbsp;&nbsp;&nbsp;<em>Last:</em>{{quote.last}}</h5>\n\t\t<div [class.trend-up]=\"quote.getChange()>0\" [class.trend-down]=\"quote.getChange()<0\">\n\t\t\t{{quote | quoteChange}}\n\t\t</div>\n    ",
         styleUrls: ["app/components/screens/quotes.screen.css"]
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute,

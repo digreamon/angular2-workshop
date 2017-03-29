@@ -14,15 +14,15 @@ var quote_service_1 = require("../../service/finance/quote.service");
 var router_1 = require("@angular/router");
 var QuotesScreen = (function () {
     function QuotesScreen(router, quoteService) {
+        var _this = this;
         this.router = router;
         this.quoteService = quoteService;
         this.defaultSymbols = "INTC,WLL,FB,DAX,FIT";
-        var that = this;
         this.symbols = this.defaultSymbols;
         this.loadQuotes();
         // WARNING scope does not work here in the TS !!!!
         this.interval = setInterval(function () {
-            that.loadQuotes();
+            _this.loadQuotes();
         }, 10000);
     }
     QuotesScreen.prototype.openDetails = function (symbol) {
@@ -35,8 +35,9 @@ var QuotesScreen = (function () {
     };
     QuotesScreen.prototype.loadQuotes = function () {
         var _this = this;
-        return this.quoteService.loadQuotes(this.symbols ? this.symbols : this.defaultSymbols).subscribe(function (quotes) {
-            _this.quotes = quotes;
+        this.quotes = [];
+        return this.quoteService.loadQuotes(this.symbols ? this.symbols : this.defaultSymbols).subscribe(function (quote) {
+            _this.quotes.push(quote);
         }, function (error) { return console.error(error); });
     };
     QuotesScreen.prototype.ngOnDestroy = function () {

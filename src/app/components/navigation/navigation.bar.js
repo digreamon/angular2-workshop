@@ -28,5 +28,4 @@ NavigationBar = __decorate([
     })
 ], NavigationBar);
 exports.default = NavigationBar;
-
 //# sourceMappingURL=navigation.bar.js.map

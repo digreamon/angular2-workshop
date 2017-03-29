@@ -19,5 +19,4 @@ FooterComponent = __decorate([
     })
 ], FooterComponent);
 exports.FooterComponent = FooterComponent;
-
 //# sourceMappingURL=footer.js.map

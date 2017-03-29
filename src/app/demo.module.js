@@ -62,5 +62,4 @@ DemoModule = __decorate([
     })
 ], DemoModule);
 exports.DemoModule = DemoModule;
-
 //# sourceMappingURL=demo.module.js.map

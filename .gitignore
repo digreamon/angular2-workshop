@@ -37,9 +37,11 @@ node_modules/
 jspm_packages/
 
 # Typescript
+dist/
 src/**/*.js
 src/**/*.js.map
 !src/systemjs.config.js
+!src/webpack.config.js
 
 # Optional npm cache directory
 .npm
@@ -65,3 +67,4 @@ src/**/*.js.map
 
 # kde files
 .directory
+!/src/main.js.map

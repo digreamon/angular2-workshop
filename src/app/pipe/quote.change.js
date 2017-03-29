@@ -19,5 +19,4 @@ QuoteChangePipe = __decorate([
     core_1.Pipe({ name: 'quoteChange' })
 ], QuoteChangePipe);
 exports.QuoteChangePipe = QuoteChangePipe;
-
 //# sourceMappingURL=quote.change.js.map

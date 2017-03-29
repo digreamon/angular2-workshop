@@ -7,5 +7,4 @@ var demo_module_1 = require("./app/demo.module");
 platform_browser_dynamic_1.platformBrowserDynamic()
     .bootstrapModule(demo_module_1.DemoModule, [])
     .catch(function (err) { return console.error(err); });
-
 //# sourceMappingURL=main.js.map

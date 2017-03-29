@@ -109,5 +109,4 @@ QuoteServiceImplMock = __decorate([
     core_1.Injectable()
 ], QuoteServiceImplMock);
 exports.QuoteServiceImplMock = QuoteServiceImplMock;
-
 //# sourceMappingURL=quote.service.js.map

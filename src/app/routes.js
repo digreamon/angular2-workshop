@@ -8,5 +8,4 @@ exports.APP_ROUTES = navigation_bar_1.navigationRoutes.concat([
         pathMatch: 'full'
     }
 ]);
-
 //# sourceMappingURL=routes.js.map

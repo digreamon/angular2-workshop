@@ -39,5 +39,4 @@ QuoteDetailsScreen = __decorate([
         quote_service_1.QuoteService])
 ], QuoteDetailsScreen);
 exports.default = QuoteDetailsScreen;
-
 //# sourceMappingURL=quote.details.screen.js.map

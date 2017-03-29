@@ -50,5 +50,4 @@ WelcomeScreen = __decorate([
     __metadata("design:paramtypes", [speech_service_1.SpeechService])
 ], WelcomeScreen);
 exports.default = WelcomeScreen;
-
 //# sourceMappingURL=welcome.screen.js.map

@@ -45,7 +45,7 @@ import {APP_ROUTES} from "./routes";
         // It's not Angular's fault. An interface is a TypeScript design-time artifact. JavaScript doesn't have interfaces.
         // The TypeScript interface disappears from the generated JavaScript.
         // There is no interface type information left for Angular to find at runtime.
-        {provide: QuoteService, useClass: QuoteServiceImplMock}
+        {provide: QuoteService, useClass: QuoteServiceImpl}
     ]
 })
 export class DemoModule {

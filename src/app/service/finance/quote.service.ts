@@ -34,18 +34,13 @@ export class QuoteServiceImpl extends QuoteService {
     }
 
     loadQuotes(quotes: string): Observable<Quote> {
-        return this.http.get(this.getUrl(quotes))
-        .map(response => {
-            return response.json().query.results.quote;
-        })
-        .map(quotes => {
-            if (quotes.map) {
-                return quotes.map(
-                    (quote: any) => new Quote(quote.Symbol, quote.Name, quote.Open, quote.LastTradePriceOnly));
-            } else {
-                return Observable.of(new Quote(quotes.Symbol, quotes.Name, quotes.Open, quotes.LastTradePriceOnly));
-            }
-        });
+        return this.http.get(this.getUrl(quotes)).map((response: any) => {
+            // get quotes OR quote
+            let quotes = response.json().query.results.quote;
+            return quotes.map ? quotes : Observable.of(quotes);
+        }).flatMap(quotes => Observable.from(quotes).map((quote: any) => {
+            return new Quote(quote.Symbol, quote.Name, quote.Open, quote.LastTradePriceOnly);
+        }));
     }
 
     private getUrl(quotes: string) {

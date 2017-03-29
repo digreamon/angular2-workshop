@@ -2,8 +2,8 @@
   "name": "angular2-workshop",
   "version": "1.0.0",
   "scripts": {
-    "compile": "tsc -p src/",
-    "compile:w": "tsc -p src/ -w",
+    "compile": "tsc -p src/ --outDir dist/",
+    "compile:w": "tsc -p src/ --outDir dist/ -w",
     "lite": "lite-server",
     "start": "yarn compile && concurrently \"yarn run compile:w\" \"yarn run lite\" "
   },

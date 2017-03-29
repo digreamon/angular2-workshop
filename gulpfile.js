@@ -1,6 +1,6 @@
 var gulp = require("gulp"),
-    exec = require("child_process").exec,
-    // spawn = require("child_process").spawn,
+    // exec = require("child_process").exec,
+    spawn = require("child_process").spawn,
     webpack = require('gulp-webpack'),
     sourcemaps = require("gulp-sourcemaps"),
     ts = require("gulp-typescript");
@@ -30,35 +30,36 @@ gulp.task("watch", ["compile"], function () {
 });
 
 gulp.task("watch-webpack", ["webpack"], function () {
-  gulp.watch(["src/**/*.ts", "webpack.config.js"], ["pack"]).on("change", function (e) {
+  gulp.watch(["src/**/*.ts", "webpack.config.js"], ["webpack"]).on("change", function (e) {
     console.log("TypeScript file " + e.path + " has been changed. Refreshing.");
   });
 });
 
 gulp.task("serve", ["compile"], function (cb) {
   // no logs, silent execution
-  exec("yarn run lite", function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
-    cb(err);
-  });
+  // exec is not meant for processes that return HUGE buffers to Node. You should use spawn for that. So what do you use exec for? Use it to run programs that return result statuses, instead of data.
+  // exec("yarn run lite", function (err, stdout, stderr) {
+  //   console.log(stdout);
+  //   console.log(stderr);
+  //   cb(err);
+  // });
 
   // verbose execution, with lows
-  // {
-  //   var ls = spawn("yarn", ["run", "lite"]);
-  //
-  //   ls.stdout.on("data", function (data) {
-  //     console.log("stdout: " + data.toString());
-  //   });
-  //
-  //   ls.stderr.on("data", function (data) {
-  //     console.log("stderr: " + data.toString());
-  //   });
-  //
-  //   ls.on("exit", function (code) {
-  //     console.log("child process exited with code " + code.toString());
-  //   });
-  // }
+  {
+    var ls = spawn("yarn", ["run", "lite"]);
+
+    ls.stdout.on("data", function (data) {
+      console.log("stdout: " + data.toString());
+    });
+
+    ls.stderr.on("data", function (data) {
+      console.log("stderr: " + data.toString());
+    });
+
+    ls.on("exit", function (code) {
+      console.log("child process exited with code " + code.toString());
+    });
+  }
 
 });
 

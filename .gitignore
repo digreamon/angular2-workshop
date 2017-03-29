@@ -67,4 +67,3 @@ src/**/*.js.map
 
 # kde files
 .directory
-!/src/main.js.map

@@ -3,7 +3,7 @@ import {QuoteService, Quote} from "../../service/finance/quote.service";
 import {Router} from "@angular/router";
 
 @Component({
-    selector: "quotes",
+    selector: "quotes-screen",
     templateUrl: "app/components/screens/quotes.screen.html",
     styleUrls: ["app/components/screens/quotes.screen.css"]
 })
@@ -31,7 +31,7 @@ export default class QuotesScreen implements OnDestroy {
     }
 
     openDetails(symbol: string) {
-        this.router.navigate(["/quotes/" + symbol]);
+        this.router.navigate(["/quotes-screen/" + symbol]);
     }
 
     onKey(event: any) {

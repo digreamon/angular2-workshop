@@ -2,21 +2,24 @@ import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
-import {HttpModule} from '@angular/http';
+import {HttpModule} from "@angular/http";
 import {DemoApp} from "./components/demo.app";
 import {HeaderComponent} from "./components/navigation/header";
 import {FooterComponent} from "./components/navigation/footer";
 import NavigationBar from "./components/navigation/navigation.bar";
-import WelcomeScreen from "./components/screens/welcome.screen";
+import SpeechScreen from "./components/screens/speech.screen";
 import QuotesScreen from "./components/screens/quotes.screen";
 import QuoteDetailsScreen from "./components/screens/quote.details.screen";
 import {QuoteChangePipe} from "./pipe/quote.change";
 import {HiGreeter} from "./components/greet/hi.greeter";
 import {SqGreeter} from "./components/greet/sq.greeter";
 import {SpeechService} from "./service/speech/speech.service";
-import {QuoteService, QuoteServiceImpl, QuoteServiceImplMock} from "./service/finance/quote.service";
+import {QuoteService, QuoteServiceImpl} from "./service/finance/quote.service";
 import {LogDirective} from "./directive/log.directive";
 import {APP_ROUTES} from "./routes";
+import {AlertModule, CarouselModule} from "ng2-bootstrap";
+import WelcomeScreen from "./components/screens/welcome.screen";
+import BootstrapScreen from "./components/screens/bootstrap.screen";
 
 
 @NgModule({
@@ -24,7 +27,11 @@ import {APP_ROUTES} from "./routes";
         BrowserModule,
         FormsModule,
         HttpModule,
-        RouterModule.forRoot(APP_ROUTES)
+        RouterModule.forRoot(APP_ROUTES),
+
+        // bootstrap
+        AlertModule.forRoot(),
+        CarouselModule.forRoot()
     ],
     declarations: [
         DemoApp,
@@ -34,6 +41,8 @@ import {APP_ROUTES} from "./routes";
         FooterComponent,
         NavigationBar,
         WelcomeScreen,
+        BootstrapScreen,
+        SpeechScreen,
         QuotesScreen,
         QuoteDetailsScreen,
         HiGreeter, SqGreeter

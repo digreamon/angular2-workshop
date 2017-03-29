@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import WelcomeScreen from "./screens/welcome.screen";
+import SpeechScreen from "./screens/speech.screen";
 import QuotesScreen from "./screens/quotes.screen";
 import QuoteDetailsScreen from "./screens/quote.details.screen";
 
@@ -7,7 +7,7 @@ import QuoteDetailsScreen from "./screens/quote.details.screen";
     selector: "demo-app",
     templateUrl: "app/components/demo.app.html",
     entryComponents: [ // precompile
-        WelcomeScreen,
+        SpeechScreen,
         QuotesScreen,
         QuoteDetailsScreen
     ]

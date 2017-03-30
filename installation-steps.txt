@@ -2,10 +2,18 @@
 # npm
 sudo apt-get install npm
 
+# you might require newer version of node-js then the one on default repos
+curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh -o install_nvm.sh
+bash install_nvm.sh
+# nvm use system # in case of some installation already present
+nvm install 6.10.1 # or any other version required
+
 
 # yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update
+sudo apt-get install yarn
 
 
 # gulp
@@ -13,8 +21,10 @@ sudo npm install -g gulp-cli
 sudo npm install -g gulp
 
 
-# angular
-sudo npm install -g angular-cli
+# angular cli (requires nodejs v6.x.x and above)
+sudo npm install -g @angular/cli
+ng new angular-cli-test # if this fails, you'll likely need a newer version of node
+ng serve
 
 
 # install

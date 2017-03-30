@@ -1,8 +1,8 @@
-<h2>Angular Data Binding</h2>
+<h2>Data Binding</h2>
 <br/>
 <ol>
 	<li>
-		One-way from data source to view target:<br/>
+		<em>One-way from data source to view target:</em><br/>
 		<ul>
 			<li>
 				<button [disabled]="buttonDisabled" [style.color]="buttonTextColor">
@@ -20,9 +20,9 @@
 				<button [ngClass]="classes">Bound Classes</button>
 			</li>
 			<li>
-				<angular-data-binding-demo-component
+				<data-binding-demo-component
 						[boundObjectValue]="bindComponentValue"
-						boundStringValue="TEST_BIND_STRING"></angular-data-binding-demo-component>
+						boundStringValue="TEST_BIND_STRING"></data-binding-demo-component>
 
 			</li>
 			<li>
@@ -36,7 +36,7 @@
 		</ul>
 	</li>
 	<li>
-		One-way from view target to data source:<br/>
+		<em>One-way from view target to data source:</em><br/>
 		<ul>
 			<li>
 				<button (click)="onEvent()">Event Binding Demo</button>
@@ -44,7 +44,7 @@
 		</ul>
 	</li>
 	<li>
-		Two-way:<br/>
+		<em>Two-way:</em><br/>
 		<ul>
 			<li>
 				<input [(ngModel)]="twoWayBindingValue"> {{twoWayBindingValue}}

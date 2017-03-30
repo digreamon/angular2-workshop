@@ -20,8 +20,9 @@ import {APP_ROUTES} from "./routes";
 import {AlertModule, CarouselModule} from "ng2-bootstrap";
 import WelcomeScreen from "./components/screens/welcome.screen";
 import BootstrapScreen from "./components/screens/bootstrap.screen";
-import AngularArchitectureDemoModule from "./module/angular.architecture.demo.module";
-import AngularDataBindingModule from "./module/angular.data.binding.demo.module";
+import ArchitectureDemoModule from "./module/architecture.demo.module";
+import DataBindingModule from "./module/data.binding.demo.module";
+import DependencyInjectionDemoModule from "./module/dependency.injection.demo.module";
 
 
 @NgModule({
@@ -36,8 +37,9 @@ import AngularDataBindingModule from "./module/angular.data.binding.demo.module"
         CarouselModule.forRoot(),
 
         // custom modules
-        AngularArchitectureDemoModule,
-        AngularDataBindingModule
+        ArchitectureDemoModule,
+        DataBindingModule,
+        DependencyInjectionDemoModule
     ],
     declarations: [
         DemoApp,

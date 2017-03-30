@@ -1,9 +1,9 @@
 import {Component, Input} from "@angular/core";
 @Component({
-    selector: "angular-data-binding-demo",
-    templateUrl: "app/module/angular.data.binding.demo.module.html",
+    selector: "data-binding-demo",
+    templateUrl: "app/module/data.binding.demo.screen.html",
 })
-export default class AngularDataBindingDemoScreen {
+export default class DataBindingDemoScreen {
     public buttonDisabled: boolean = true;
     public buttonTextColor: string = "red";
     public imageSrc: string = "../../assets/trend_up.png";

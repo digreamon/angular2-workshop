@@ -1,0 +1,54 @@
+<h2>Angular Data Binding</h2>
+<br/>
+<ol>
+	<li>
+		One-way from data source to view target:<br/>
+		<ul>
+			<li>
+				<button [disabled]="buttonDisabled" [style.color]="buttonTextColor">
+					Bound "disabled" and text color
+				</button>
+			</li>
+			<li>
+				"[src]": <img [src]="imageSrc"/>
+			</li>
+			<li>
+				"bind-src": <img bind-src="imageSrc"/>
+			</li>
+			<li>
+				"class" property via [ngClass] directive:
+				<button [ngClass]="classes">Bound Classes</button>
+			</li>
+			<li>
+				<angular-data-binding-demo-component
+						[boundObjectValue]="bindComponentValue"
+						boundStringValue="TEST_BIND_STRING"></angular-data-binding-demo-component>
+
+			</li>
+			<li>
+				<p><span>"{{injectionSanitizing}}" is the <i>interpolated</i> property with injected script.</span></p>
+				<p>"<span [innerHTML]="injectionSanitizing"></span>" is the <i>bound</i> property with injected script.
+				</p>
+			</li>
+			<li>
+				<p>attributes, class toggling, etc...</p>
+			</li>
+		</ul>
+	</li>
+	<li>
+		One-way from view target to data source:<br/>
+		<ul>
+			<li>
+				<button (click)="onEvent()">Event Binding Demo</button>
+			</li>
+		</ul>
+	</li>
+	<li>
+		Two-way:<br/>
+		<ul>
+			<li>
+				<input [(ngModel)]="twoWayBindingValue"> {{twoWayBindingValue}}
+			</li>
+		</ul>
+	</li>
+</ol>

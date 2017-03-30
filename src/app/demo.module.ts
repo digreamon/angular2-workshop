@@ -20,6 +20,8 @@ import {APP_ROUTES} from "./routes";
 import {AlertModule, CarouselModule} from "ng2-bootstrap";
 import WelcomeScreen from "./components/screens/welcome.screen";
 import BootstrapScreen from "./components/screens/bootstrap.screen";
+import AngularArchitectureDemoModule from "./module/angular.architecture.demo.module";
+import AngularDataBindingModule from "./module/angular.data.binding.demo.module";
 
 
 @NgModule({
@@ -31,24 +33,32 @@ import BootstrapScreen from "./components/screens/bootstrap.screen";
 
         // bootstrap
         AlertModule.forRoot(),
-        CarouselModule.forRoot()
+        CarouselModule.forRoot(),
+
+        // custom modules
+        AngularArchitectureDemoModule,
+        AngularDataBindingModule
     ],
     declarations: [
         DemoApp,
+
         LogDirective,
+
         QuoteChangePipe,
+
+        NavigationBar,
         HeaderComponent,
         FooterComponent,
-        NavigationBar,
+        HiGreeter, SqGreeter,
+
         WelcomeScreen,
         BootstrapScreen,
         SpeechScreen,
         QuotesScreen,
-        QuoteDetailsScreen,
-        HiGreeter, SqGreeter
+        QuoteDetailsScreen
     ],
-    bootstrap: [DemoApp],
-    providers: [
+    bootstrap: [DemoApp], // Only the root module should set this bootstrap property.
+    providers: [ // Dependency Injection
         SpeechService,
         // Can't use interface as provider token
         // It's not Angular's fault. An interface is a TypeScript design-time artifact. JavaScript doesn't have interfaces.

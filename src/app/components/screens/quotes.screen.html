@@ -1,20 +1,18 @@
-<div class="container">
-	<h1>Quotes</h1>
-	<div class="form-group">
-		<label for="symbolsid">Symbols to retrieve:</label>
-		<input (keyup)="onKey($event)" [(ngModel)]="symbols" type="text" class="form-control" id="symbolsid">
-	</div>
-	<table class="table table-bordered table-hover">
-		<tbody>
-		<tr *ngFor="let quote of quotes" (click)="openDetails(quote.symbol)">
-			<td>{{quote.symbol}}</td>
-			<td>{{quote.last}}</td>
-			<td>
-				<div [class.trend-up]="quote.getChange()>0" [class.trend-down]="quote.getChange()<0">
-					{{quote | quoteChange}}
-				</div>
-			</td>
-		</tr>
-		</tbody>
-	</table>
+<h1>Quotes</h1>
+<div class="form-group">
+	<label for="symbolsid">Symbols to retrieve:</label>
+	<input (keyup)="onKey($event)" [(ngModel)]="symbols" type="text" class="form-control" id="symbolsid">
 </div>
+<table class="table table-bordered table-hover">
+	<tbody>
+	<tr *ngFor="let quote of quotes" (click)="openDetails(quote.symbol)">
+		<td>{{quote.symbol}}</td>
+		<td>{{quote.last}}</td>
+		<td>
+			<div [class.trend-up]="quote.getChange()>0" [class.trend-down]="quote.getChange()<0">
+				{{quote | quoteChange}}
+			</div>
+		</td>
+	</tr>
+	</tbody>
+</table>

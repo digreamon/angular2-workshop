@@ -1,11 +1,15 @@
 import {Component, OnDestroy, Input} from "@angular/core";
 import {QuoteService, Quote} from "../../service/finance/quote.service";
 import {Router} from "@angular/router";
+import QuoteDetailsScreen from "./quote.details.screen";
 
 @Component({
     selector: "quotes-screen",
     templateUrl: "app/components/screens/quotes.screen.html",
-    styleUrls: ["app/components/screens/quotes.screen.css"]
+    styleUrls: ["app/components/screens/quotes.screen.css"],
+    entryComponents: [
+        QuoteDetailsScreen
+    ]
 })
 export default class QuotesScreen implements OnDestroy {
 

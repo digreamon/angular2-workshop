@@ -5,13 +5,11 @@ import {Quote, QuoteService} from "../../service/finance/quote.service";
 @Component({
     selector: "quote-details-screen",
     template: `
-		<div class="container">
-			<h3>{{quote.name}}&nbsp;&nbsp;({{quote.symbol}})</h3>
-			<hr>
-			<h5><em>Open:</em>{{quote.open}}&nbsp;&nbsp;&nbsp;<em>Last:</em>{{quote.last}}</h5>
-			<div [class.trend-up]="quote.getChange()>0" [class.trend-down]="quote.getChange()<0">
-				{{quote | quoteChange}}
-			</div>
+		<h3>{{quote.name}}&nbsp;&nbsp;({{quote.symbol}})</h3>
+		<hr>
+		<h5><em>Open:</em>{{quote.open}}&nbsp;&nbsp;&nbsp;<em>Last:</em>{{quote.last}}</h5>
+		<div [class.trend-up]="quote.getChange()>0" [class.trend-down]="quote.getChange()<0">
+			{{quote | quoteChange}}
 		</div>
     `,
     styleUrls: ["app/components/screens/quotes.screen.css"]

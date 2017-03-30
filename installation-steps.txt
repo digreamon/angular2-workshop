@@ -1,0 +1,21 @@
+
+# npm
+sudo apt-get install npm
+
+
+# yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+
+# gulp
+sudo npm install -g gulp-cli
+sudo npm install -g gulp
+
+
+# angular
+sudo npm install -g angular-cli
+
+
+# install
+yarn install --ignore-engines

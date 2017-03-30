@@ -23,6 +23,7 @@ import BootstrapScreen from "./components/screens/bootstrap.screen";
 import ArchitectureDemoModule from "./module/architecture.demo.module";
 import DataBindingModule from "./module/data.binding.demo.module";
 import DependencyInjectionDemoModule from "./module/dependency.injection.demo.module";
+import FormDemoModule from "./module/form.demo.module";
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import DependencyInjectionDemoModule from "./module/dependency.injection.demo.mo
         // custom modules
         ArchitectureDemoModule,
         DataBindingModule,
-        DependencyInjectionDemoModule
+        DependencyInjectionDemoModule,
+        FormDemoModule
     ],
     declarations: [
         DemoApp,

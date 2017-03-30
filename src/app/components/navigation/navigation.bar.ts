@@ -7,11 +7,13 @@ import QuoteDetailsScreen from "../screens/quote.details.screen";
 import ArchitectureDemoScreen from "../../module/architecture.demo.screen";
 import DataBindingDemoScreen from "../../module/data.binding.demo.screen";
 import DependencyInjectionDemoScreen from "../../module/dependency.injection.demo.screen";
+import FormDemoComponent from "../../module/form.demo.component";
 
 export const navigationRoutes: Routes = [
     {path: 'architecture-demo', component: ArchitectureDemoScreen},
     {path: 'data-binding-demo', component: DataBindingDemoScreen},
     {path: 'dependency-injection-demo', component: DependencyInjectionDemoScreen},
+    {path: 'form-demo', component: FormDemoComponent},
     {path: 'bootstrap-screen', component: BootstrapScreen},
     {path: 'speech-screen', component: SpeechScreen},
     {path: 'quotes-screen', component: QuotesScreen},
